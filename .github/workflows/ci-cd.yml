@@ -8,6 +8,10 @@ on:
     branches:
       - main
 
+# Add permissions block
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -33,5 +37,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist # or your build output directory
+          folder: dist
+          token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
