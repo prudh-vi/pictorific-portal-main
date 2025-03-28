@@ -1,0 +1,83 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 263.4 70% 50.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 270 95% 75%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 263.4 70% 50.2%;
+
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-app-dark text-foreground antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-app-darker;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-app-gray-light rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-app-purple/50;
+  }
+}
+
+/* Custom styles */
+@layer components {
+  .glow-border {
+    @apply border border-app-purple/20 shadow-[0_0_15px_rgba(139,92,246,0.15)];
+  }
+  
+  .glow-text {
+    @apply relative;
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+  }
+  
+  .glass-panel {
+    @apply bg-black/30 backdrop-blur-lg border border-white/10 rounded-xl;
+  }
+
+  .input-gradient {
+    @apply bg-gradient-to-br from-app-gray-dark to-app-darker;
+  }
+}
